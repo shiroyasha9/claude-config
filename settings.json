@@ -1,0 +1,33 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "DISABLE_ZOXIDE": "1"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "defaultMode": "plan"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/shiroyasha/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "safety-net@cc-marketplace": true,
+    "code-review@claude-plugins-official": true,
+    "playwright@claude-plugins-official": false,
+    "typescript-lsp@claude-plugins-official": true,
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
+    "frontend-design@claude-plugins-official": true
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "persmissions": {
+    "deny": [
+      "Bash(**/.env)",
+      "Read(**/.env)",
+      "Write(**/.env)"
+    ]
+  }
+}

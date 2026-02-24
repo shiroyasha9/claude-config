@@ -1,0 +1,8 @@
+*
+!agents/
+!agents/**
+!CLAUDE.md
+!keybindings.json
+!statusline-command.sh
+!settings.json
+!.gitignore
