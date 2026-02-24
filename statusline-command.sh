@@ -17,9 +17,6 @@ if git -C "$cwd" rev-parse --git-dir --no-optional-locks > /dev/null 2>&1; then
     git_branch=" $branch"
     # Check for active PR on this branch
     pr_num=$(gh pr view --json number -q '.number' 2>/dev/null)
-    if [ -n "$pr_num" ]; then
-      git_branch="$git_branch \033[32mPR #${pr_num}\033[90m"
-    fi
   fi
 fi
 
@@ -30,5 +27,10 @@ if [ -n "$used" ] && [ "$used" != "null" ]; then
   ctx_info="  ${used_int}%"
 fi
 
-printf "\033[34m%s\033[0m\033[90m%s\033[0m  \033[33m%s\033[0m%s" \
-  "$short_cwd" "$git_branch" "$model" "$ctx_info"
+if [ -n "$pr_num" ]; then
+  printf "\033[34m%s\033[0m\033[90m%s \033[32mPR #%s\033[0m  \033[33m%s\033[0m%s" \
+    "$short_cwd" "$git_branch" "$pr_num" "$model" "$ctx_info"
+else
+  printf "\033[34m%s\033[0m\033[90m%s\033[0m  \033[33m%s\033[0m%s" \
+    "$short_cwd" "$git_branch" "$model" "$ctx_info"
+fi
