@@ -16,11 +16,17 @@
   },
   "enabledPlugins": {
     "safety-net@cc-marketplace": true,
-    "code-review@claude-plugins-official": true,
-    "playwright@claude-plugins-official": false,
-    "typescript-lsp@claude-plugins-official": true,
     "ui-ux-pro-max@ui-ux-pro-max-skill": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true
   },
   "skipDangerousModePermissionPrompt": true,
   "persmissions": {
@@ -29,5 +35,6 @@
       "Read(**/.env)",
       "Write(**/.env)"
     ]
-  }
+  },
+  "effortLevel": "high"
 }
