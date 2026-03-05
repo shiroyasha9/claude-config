@@ -4,6 +4,7 @@
 - No unnecessary fluff or verbose code snippets.
 - Keep plans extremely concise. Sacrifice grammar for brevity.
 - End each plan or findings document with unresolved questions, if any.
+- Use regular hyphens instead of em-dashes.
 
 
 ## Development
