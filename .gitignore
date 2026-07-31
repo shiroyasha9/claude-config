@@ -5,6 +5,7 @@
 !keybindings.json
 !statusline-command.sh
 !settings.json
+!biome.json
 !.gitignore
 !README.md
 !exported/

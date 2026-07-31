@@ -1,0 +1,28 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.6/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "useSortedKeys": {
+          "level": "on",
+          "options": {
+            "sortOrder": "lexicographic"
+          }
+        }
+      }
+    },
+    "enabled": true
+  },
+  "files": {
+    "includes": ["**/*.json", "**/*.jsonc"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
+}

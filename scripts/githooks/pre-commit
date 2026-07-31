@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+if git status --short | grep --quiet '^MM'; then
+  printf '%s\n' "ERROR: Some staged files have unstaged changes" >&2
+  exit 1
+fi
+
+if command -v biome >/dev/null 2>&1; then
+  BIOME="biome"
+else
+  BIOME="npx --yes @biomejs/biome"
+fi
+
+$BIOME check --write --staged --files-ignore-unknown=true --no-errors-on-unmatched
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+if [ -n "$staged" ]; then
+  printf '%s\n' "$staged" | tr '\n' '\0' | xargs -0 git add --
+fi
