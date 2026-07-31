@@ -192,7 +192,7 @@
   "model": "opus[1m]",
   "permissions": {
     "allow": ["Bash(bun npm:*)", "Bash(npm view:*)"],
-    "defaultMode": "plan",
+    "defaultMode": "bypassPermissions",
     "deny": ["Bash(**/.env)", "Read(**/.env)", "Edit(**/.env)"]
   },
   "skillListingBudgetFraction": 0.02,
