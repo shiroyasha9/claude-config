@@ -1,73 +1,93 @@
 {
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "DISABLE_ZOXIDE": "1",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
-  },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "permissions": {
-    "allow": [
-      "Bash(bun npm:*)",
-      "Bash(npm view:*)"
-    ],
-    "deny": [
-      "Bash(**/.env)",
-      "Read(**/.env)",
-      "Write(**/.env)"
-    ],
-    "defaultMode": "plan"
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/shiroyasha/.claude/statusline-command.sh"
-  },
-  "enabledPlugins": {
-    "safety-net@cc-marketplace": true,
-    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
-    "frontend-design@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "linear@claude-plugins-official": true,
-    "vercel@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "figma@claude-plugins-official": false,
-    "slack@claude-plugins-official": true,
-    "notion@claude-plugins-official": true,
-    "caveman@caveman": true,
-    "fallow@fallow-skills": true,
-    "supabase@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
-      }
-    },
-    "fallow-skills": {
-      "source": {
-        "source": "github",
-        "repo": "fallow-rs/fallow-skills"
-      }
-    }
-  },
-  "skillListingBudgetFraction": 0.02,
-  "effortLevel": "xhigh",
-  "tui": "fullscreen",
-  "skipDangerousModePermissionPrompt": true,
-  "editorMode": "vim",
-  "teammateMode": "in-process",
-  "agentPushNotifEnabled": true,
-  "voiceEnabled": true
+	"skillListingBudgetFraction": 0.02,
+	"env": {
+		"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+		"DISABLE_ZOXIDE": "1",
+		"IMPECCABLE_HOOK_DISABLED": "1"
+	},
+	"attribution": {
+		"commit": "",
+		"pr": ""
+	},
+	"permissions": {
+		"allow": ["Bash(bun npm:*)", "Bash(npm view:*)"],
+		"deny": ["Bash(**/.env)", "Read(**/.env)", "Edit(**/.env)"],
+		"defaultMode": "plan"
+	},
+	"model": "opus[1m]",
+	"statusLine": {
+		"type": "command",
+		"command": "bash /Users/shiroyasha/.claude/statusline-command.sh"
+	},
+	"hooks": {
+		"SessionEnd": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "python3 \"$HOME/.claude/scripts/export-config.py\""
+					}
+				]
+			}
+		]
+	},
+	"enabledPlugins": {
+		"safety-net@cc-marketplace": true,
+		"frontend-design@claude-plugins-official": true,
+		"superpowers@claude-plugins-official": true,
+		"code-review@claude-plugins-official": true,
+		"feature-dev@claude-plugins-official": true,
+		"code-simplifier@claude-plugins-official": true,
+		"typescript-lsp@claude-plugins-official": true,
+		"commit-commands@claude-plugins-official": true,
+		"security-guidance@claude-plugins-official": true,
+		"claude-md-management@claude-plugins-official": true,
+		"pr-review-toolkit@claude-plugins-official": true,
+		"context7@claude-plugins-official": false,
+		"linear@claude-plugins-official": true,
+		"vercel@claude-plugins-official": true,
+		"skill-creator@claude-plugins-official": false,
+		"figma@claude-plugins-official": false,
+		"slack@claude-plugins-official": true,
+		"notion@claude-plugins-official": true,
+		"caveman@caveman": true,
+		"fallow@fallow-skills": false,
+		"supabase@claude-plugins-official": false,
+		"impeccable@impeccable": true,
+		"gohan@gohan": true,
+		"swift-lsp@claude-plugins-official": true
+	},
+	"extraKnownMarketplaces": {
+		"caveman": {
+			"source": {
+				"source": "github",
+				"repo": "JuliusBrussee/caveman"
+			}
+		},
+		"fallow-skills": {
+			"source": {
+				"source": "github",
+				"repo": "fallow-rs/fallow-skills"
+			}
+		},
+		"impeccable": {
+			"source": {
+				"source": "github",
+				"repo": "pbakaus/impeccable"
+			}
+		},
+		"gohan": {
+			"source": {
+				"source": "github",
+				"repo": "shiroyasha9/gohan"
+			}
+		}
+	},
+	"effortLevel": "high",
+	"tui": "fullscreen",
+	"skipDangerousModePermissionPrompt": true,
+	"editorMode": "vim",
+	"teammateMode": "in-process",
+	"agentPushNotifEnabled": true,
+	"voiceEnabled": true
 }
