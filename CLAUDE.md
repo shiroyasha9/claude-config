@@ -24,6 +24,11 @@
 - When working with any third-party library or something similar, you MUST always look up the official documentation to ensure you're working with up-to-date information.
 - Use the DocsExplorer subagent for efficient documentation lookup.
 
+### File Search: Finding Code / Files 
+
+- For any file search or grep in the current git-indexed directory, use fff tools.
+- This applies to delegated work too: when dispatching a subagent/team to search or explore, explicitly instruct it to use fff tools (Explore/general agents default to plain grep/glob otherwise).
+
 ## Code Style
 
 - Avoid unnecessary comments. Add comments only when code isn't self-explanatory.
