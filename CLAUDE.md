@@ -31,7 +31,10 @@
 
 ## Code Style
 
-- Avoid unnecessary comments. Add comments only when code isn't self-explanatory.
+- **No comments by default.** Zero. Identifiers and types carry the meaning. Restating what code does is banned (e.g. `// loop over users`, `// set the flag`, `// fetch data`).
+- The ONLY allowed comments: documenting a workaround, a counterintuitive constraint, a non-obvious invariant, or a "why-not-the-obvious-thing" decision. If the comment explains WHAT, delete it; only WHY may survive.
+- "Self-explanatory" / "non-obvious" are not escape hatches. Treat them as near-never. When in doubt, no comment.
+- Do not add comments to satisfy perceived documentation norms. Match (or undercut) the surrounding file's comment density.
 - Prefer readable code over overly complex, hard-to-understand alternatives.
 - Always use theme tokens (e.g., from the design system) for colors—never hardcoded hex values.
 - Differentiate between official and third-party styling when applying theme colors.
